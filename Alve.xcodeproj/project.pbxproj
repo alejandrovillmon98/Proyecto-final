@@ -16,6 +16,7 @@
 		4A0536B921AC91B800F2AB53 /* AlveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0536B821AC91B800F2AB53 /* AlveUITests.swift */; };
 		4A702C9F21AF21EC00A30FF3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A702C9E21AF21EC00A30FF3 /* SecondViewController.swift */; };
 		4A702CA121AF236E00A30FF3 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A702CA021AF236E00A30FF3 /* MessageTableViewController.swift */; };
+		4A9A28EC21AF2A3100EBEA79 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A28EB21AF2A3100EBEA79 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4A0536BA21AC91B900F2AB53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A702C9E21AF21EC00A30FF3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4A702CA021AF236E00A30FF3 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		4A9A28EB21AF2A3100EBEA79 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				4A0536A121AC91B800F2AB53 /* LaunchScreen.storyboard */,
 				4A0536A421AC91B800F2AB53 /* Info.plist */,
 				4A702CA021AF236E00A30FF3 /* MessageTableViewController.swift */,
+				4A9A28EB21AF2A3100EBEA79 /* LoginViewController.swift */,
 			);
 			path = Alve;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				4A702C9F21AF21EC00A30FF3 /* SecondViewController.swift in Sources */,
 				4A05369B21AC91AE00F2AB53 /* ViewController.swift in Sources */,
 				4A702CA121AF236E00A30FF3 /* MessageTableViewController.swift in Sources */,
+				4A9A28EC21AF2A3100EBEA79 /* LoginViewController.swift in Sources */,
 				4A05369921AC91AE00F2AB53 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
