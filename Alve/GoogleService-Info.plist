@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>890865539428-4qg23nfak0ol91lfa971o6a4kt4f2ifu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.890865539428-4qg23nfak0ol91lfa971o6a4kt4f2ifu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDcTlMstB7-yG7vz66RoAmiWT9wr3QqBCM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>890865539428</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.MPOO1.Alve</string>
+	<key>PROJECT_ID</key>
+	<string>alvedatos-be51a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>alvedatos-be51a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:890865539428:ios:340b0318f286f07e</string>
+	<key>DATABASE_URL</key>
+	<string>https://alvedatos-be51a.firebaseio.com</string>
+</dict>
+</plist>
