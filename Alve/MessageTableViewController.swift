@@ -1,14 +1,14 @@
 //
-//  MessagesTableViewController.swift
+//  MessageTableViewController.swift
 //  Alve
 //
-//  Created by David Hdz on 11/27/18.
+//  Created by David Hdz on 11/28/18.
 //  Copyright © 2018 David Hdz. All rights reserved.
 //
 
 import UIKit
 
-class MessagesTableViewController: UITableViewController {
+class MessageTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
