@@ -7,22 +7,49 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var message: UILabel!
     
+    var ref:DatabaseReference!
+
+
+    
+    @IBOutlet weak var messegeTxt: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+            ref = Database.database().reference().child("mensajeCalle")
     }
 
 
-    @IBAction func enviar(_ sender: Any) {
-        message.text = "Hola mundo"
+    @IBAction func enviarBtn(_ sender: Any) {
+        let key = ref.childByAutoId().key
+        
+        guard let messege = messegeTxt.text else {
+            return
+        }
+        let values = ["texto": messege,
+                      "imagen": "mi imagen",
+                      "latitude": "37.331820",
+                      "longitude": "-122.031180"
+                    ] as [String : Any]
+        
+                self.ref.child(key).setValue(values)
+        print("mensaje enviado")
+          
     }
     
+    
+    @IBAction func eventosBtn(_ sender: Any) {
+        let tableVC = MessageTableViewController()
+        self.navigationController?.pushViewController(tableVC, animated: true)
+
+    }
+    
+//    guard let mesajeID = Auth.auth().currentUser?.uid else {
+//    return
+//    }
 }
 

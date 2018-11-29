@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+
 
 class MessageTableViewController: UITableViewController {
+     var ref:DatabaseReference!
+    
+    var mensajes = [Mensajes](){
+        didSet{
+            updateData()
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "Clientes"
+        loadProductos()
+        print(mensajes)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,7 +37,7 @@ class MessageTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,5 +99,29 @@ class MessageTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func loadProductos(){
+        self.mensajes.removeAll()
+        ref = Database.database().reference().child("mensajeCalle")
+        self.ref.observe(DataEventType.value) { (snapshot) in
+            self.mensajes.removeAll()
+            if snapshot.childrenCount>0{
+                for mensaje in snapshot.children.allObjects as! [DataSnapshot]{
+                    if let mensajeObject = mensaje.value as? [String: AnyObject]{
+                        let texto = mensajeObject["texto"] as! String
+                        let imagen = mensajeObject["imagen"] as! String
+                        let latitude = mensajeObject["latitude"] as! String
+                        let longitude = mensajeObject["longitude"] as! String
+                        self.mensajes.append(Mensajes(texto:texto, imagen: imagen, latitude:latitude, longitude:longitude))
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateData() {
+        self.tableView.reloadData()
+         print(self.mensajes)
+    }
 
 }
