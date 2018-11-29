@@ -1,0 +1,6 @@
+framework module Pods_Alve {
+  umbrella header "Pods-Alve-umbrella.h"
+
+  export *
+  module * { export * }
+}

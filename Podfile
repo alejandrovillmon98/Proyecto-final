@@ -6,18 +6,9 @@ target 'Alve' do
   use_frameworks!
 
   # Pods for Alve
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
-  target 'AlveTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'AlveUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-    pod 'Firebase/Core'
-    pod 'Firebase/Firestore'
-    pod 'Firebase/Auth'
 end
