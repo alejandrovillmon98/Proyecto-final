@@ -43,13 +43,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func eventosBtn(_ sender: Any) {
-        let tableVC = MessageTableViewController()
-        self.navigationController?.pushViewController(tableVC, animated: true)
+//        let tableVC = MessageTableViewController()
+//        self.navigationController?.pushViewController(tableVC, animated: true)
+       self.performSegue(withIdentifier: "eventos", sender: self)
 
     }
     
-//    guard let mesajeID = Auth.auth().currentUser?.uid else {
-//    return
-//    }
+    @IBAction func registreBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "register", sender: self)
+    }
+    
+
 }
 

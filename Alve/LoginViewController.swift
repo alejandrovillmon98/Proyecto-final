@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
@@ -32,6 +33,15 @@ class LoginViewController: UIViewController {
     @IBAction func registrarBtn(_ sender: Any) {
         registerUser()
     }
+    
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "autentic") {
+            let destinationVC = segue.destination as! MessegeTableViewController
+            destinationVC.mydato = "hola mundo"
+        }
+    }
 
     func loginUser() {
         
@@ -42,13 +52,9 @@ class LoginViewController: UIViewController {
                 if user != nil {
                     print("Usuario autenticado")
                     print(user!.user.uid)
-                    let tableVC = MessageTableViewController()
-//                    self.present(tableVC, animated: true, completion: nil)
-                   self.navigationController?.pushViewController(tableVC, animated: true)
-//                    let historialVC = HistorialClientesTableViewController()
-//                    historialVC.cliente = clientes?.referencia
-//                    self.navigationController?.pushViewController(historialVC, animated: true)
-//                    self.present(TabBarViewController(), animated: true, completion: nil)
+                    let tableVC = MessegeTableViewController()
+                    tableVC.mydato = "hola"
+                    self.performSegue(withIdentifier: "autentic", sender: self)
                 }else {
                     if let error = error?.localizedDescription{
                         print("Error al iniciar sesion por firebase", error)
