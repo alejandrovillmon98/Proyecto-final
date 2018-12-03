@@ -13,6 +13,7 @@ class MessegeTableViewController: UITableViewController {
 
     var ref:DatabaseReference!
     var mydato:String?
+    var index:Int=-1
     
     var mensajes = [Mensajes](){
         didSet{
@@ -101,10 +102,16 @@ class MessegeTableViewController: UITableViewController {
      }
      */
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = indexPath.row
+        self.performSegue(withIdentifier: "resume", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "") {
-            let destinationVC = segue.destination as! MessegeTableViewController
-            destinationVC.mydato = "hola mundo"
+        if(segue.identifier == "resume") {
+            let destinationVC = segue.destination as! resumeViewController
+            destinationVC.referenciaMensaje = mensajes[index].idMessage!
         }
     }
     
@@ -119,7 +126,9 @@ class MessegeTableViewController: UITableViewController {
                         let imagen = mensajeObject["imagen"] as! String
                         let latitude = mensajeObject["latitude"] as! String
                         let longitude = mensajeObject["longitude"] as! String
-                        self.mensajes.append(Mensajes(texto:texto, imagen: imagen, latitude:latitude, longitude:longitude))
+                        let idMessage = mensajeObject["idMessage"] as! String
+                        self.mensajes.append(Mensajes(texto:texto, imagen: imagen, latitude:latitude, longitude:longitude, idMessage:idMessage))
+                        print(mensajeObject)
                     }
                 }
             }

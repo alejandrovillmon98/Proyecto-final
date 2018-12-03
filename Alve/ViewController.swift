@@ -33,7 +33,8 @@ class ViewController: UIViewController {
         let values = ["texto": messege,
                       "imagen": "mi imagen",
                       "latitude": "37.331820",
-                      "longitude": "-122.031180"
+                      "longitude": "-122.031180",
+                      "idMessage": key
                     ] as [String : Any]
         
                 self.ref.child(key).setValue(values)

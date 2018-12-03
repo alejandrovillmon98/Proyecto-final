@@ -194,17 +194,17 @@
                         </prototypes>
                     </tableView>
                     <connections>
-                        <segue destination="PTb-M3-ESg" kind="show" id="ri9-vd-MNu"/>
+                        <segue destination="PTb-M3-ESg" kind="show" identifier="resume" id="ri9-vd-MNu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30C-Uw-oad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1353" y="1061"/>
         </scene>
-        <!--View Controller-->
+        <!--Resume View Controller-->
         <scene sceneID="WaW-uD-oR0">
             <objects>
-                <viewController id="PTb-M3-ESg" sceneMemberID="viewController">
+                <viewController id="PTb-M3-ESg" customClass="resumeViewController" customModule="Alve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywk-4B-taf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWE-g4-zB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079.1999999999998" y="1055.6221889055473"/>
+            <point key="canvasLocation" x="2079" y="1060"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ajp-Az-oZk">
