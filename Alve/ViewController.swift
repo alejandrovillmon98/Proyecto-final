@@ -26,20 +26,30 @@ class ViewController: UIViewController {
 
     @IBAction func enviarBtn(_ sender: Any) {
         let key = ref.childByAutoId().key
+        let keyString = String(key)
         
         guard let messege = messegeTxt.text else {
             return
         }
-        let values = ["texto": messege,
+        let values = ["referencia": keyString,
+                      "texto": messege,
                       "imagen": "mi imagen",
-                      "latitude": "37.331820",
-                      "longitude": "-122.031180",
-                      "idMessage": key
+                      "latitude": "19.3314064",
+                      "longitude": "-99.1841764"
                     ] as [String : Any]
         
                 self.ref.child(key).setValue(values)
         print("mensaje enviado")
+        messegeTxt.text = ""
           
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "eventos") {
+            let destinationVC = segue.destination as! MessegeTableViewController
+            destinationVC.mydato = "hola mundo"
+            destinationVC.valorAuth = 0
+        }
     }
     
     

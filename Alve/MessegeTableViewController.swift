@@ -13,7 +13,8 @@ class MessegeTableViewController: UITableViewController {
 
     var ref:DatabaseReference!
     var mydato:String?
-    var index:Int=-1
+    var index:Int = -1
+    var valorAuth:Int = 0
     
     var mensajes = [Mensajes](){
         didSet{
@@ -111,23 +112,28 @@ class MessegeTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "resume") {
             let destinationVC = segue.destination as! resumeViewController
-            destinationVC.referenciaMensaje = mensajes[index].idMessage!
+            destinationVC.referenciaMensaje = mensajes[index].referencia!
+            destinationVC.valorAuth = self.valorAuth
         }
     }
     
     func loadProductos(){
-        ref = Database.database().reference().child("mensajeCalle")
+        ref = Database.database().reference().child("mensajeGeneral")
+        if valorAuth == 1{
+            ref = Database.database().reference().child("mensajeCalle")
+        }
         self.ref.observe(DataEventType.value) { (snapshot) in
             self.mensajes.removeAll()
             if snapshot.childrenCount>0{
                 for mensaje in snapshot.children.allObjects as! [DataSnapshot]{
                     if let mensajeObject = mensaje.value as? [String: AnyObject]{
+                        let referencia:String? = mensajeObject["referencia"] as? String
                         let texto = mensajeObject["texto"] as! String
                         let imagen = mensajeObject["imagen"] as! String
                         let latitude = mensajeObject["latitude"] as! String
                         let longitude = mensajeObject["longitude"] as! String
-                        let idMessage = mensajeObject["idMessage"] as! String
-                        self.mensajes.append(Mensajes(texto:texto, imagen: imagen, latitude:latitude, longitude:longitude, idMessage:idMessage))
+                        
+                        self.mensajes.append(Mensajes(texto:texto, imagen: imagen, latitude:latitude, longitude:longitude, referencia:referencia))
                         print(mensajeObject)
                     }
                 }

@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
         if(segue.identifier == "autentic") {
             let destinationVC = segue.destination as! MessegeTableViewController
             destinationVC.mydato = "hola mundo"
+            destinationVC.valorAuth = 1
         }
     }
 

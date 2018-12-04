@@ -13,6 +13,6 @@ struct Mensajes {
     var imagen: String?
     var latitude: String?
     var longitude: String?
-    var idMessage: String?
+    var referencia: String?
 }
 
